@@ -13,7 +13,8 @@ namespace juli1_tu_pue_la_merde
 
         public Weapon(string weaponName, int damage)
         {
-
+            this.weaponName = weaponName;
+            this.damage = damage;
         }
     }
 }

@@ -192,6 +192,7 @@ namespace juli1_tu_pue_la_merde
             Console.ReadKey();
             Console.WriteLine("<Vers la rivière> ou <Vers la fumée>");
             Console.WriteLine("FIN DE LA DEMO GRATUITE");
+            Console.ReadKey();
             System.Environment.Exit(0);
         }
     }

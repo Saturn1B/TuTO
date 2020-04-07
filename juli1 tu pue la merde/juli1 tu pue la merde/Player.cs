@@ -26,29 +26,33 @@ namespace juli1_tu_pue_la_merde
         public void Attack(Enemy enemy)
         {
             enemy.life -= weaponInHand.damage * strengh;
-            Console.WriteLine(enemy.Name + " a perdu " + weaponInHand.damage * strengh + " vie");
-            Console.ReadLine();
-            Console.WriteLine(enemy.Name + " a " + enemy.life + " de vie");
+            Console.WriteLine(enemy.Name + " a perdu " + weaponInHand.damage * strengh + " vie.");
             Console.ReadLine();
             if (enemy.life <= 0)
             {
-                Console.WriteLine(enemy.Name + " est mort ");
+                Console.WriteLine(enemy.Name + " est mort. ");
                 Console.ReadLine();
-                Console.WriteLine(Name + " gagne " + enemy.xpToGive + " xp");
+                Console.WriteLine(Name + " gagne " + enemy.xpToGive + " xp.");
                 Console.ReadLine();
                 xp += enemy.xpToGive;
-                Console.WriteLine(Name + " a " + xp + " xp");
+                Console.WriteLine(Name + " a " + xp + " xp.");
+                Console.ReadLine();
+                Console.WriteLine("Bravo vous avez tué " + enemy.Name + "!");
                 Console.ReadLine();
             }
             else if(enemy.life > 0)
             {
-
+                Console.WriteLine(enemy.Name + " a " + enemy.life + " de vie.");
+                Console.ReadLine();
+                Console.WriteLine(enemy.Name + " attaqua a son tour.");
+                Console.ReadLine();
+                enemy.Attack(this);
             }
         }
 
         public void LooseLife(int damage)
         {
-            Console.WriteLine("Vous perdez " + damage + " de vie");
+            Console.WriteLine("Vous perdez " + damage + " de vie.");
             life -= damage;
             if(life <= 0)
             {
@@ -58,8 +62,10 @@ namespace juli1_tu_pue_la_merde
 
         public void Dead()
         {
-            Console.WriteLine("Vous êtes mort");
-
+            Console.WriteLine("Vous êtes mort.");
+            Console.ReadLine();
+            Console.WriteLine("Relancer le jeu.");
+            System.Environment.Exit(0);
         }
     }
 }

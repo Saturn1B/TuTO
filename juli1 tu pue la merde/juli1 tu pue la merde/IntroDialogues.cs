@@ -31,10 +31,18 @@ namespace juli1_tu_pue_la_merde
             Console.ReadKey();
             Console.WriteLine("Choississez votre nom : ");
             playerName = Console.ReadLine();
-            Console.WriteLine("C'est bon, je me souviens, je suis " + playerName + ".");
-            player.Name = playerName;
-            Console.ReadKey();
-            WeaponSelection(player);
+            if (playerName == "")
+            {
+                Console.WriteLine("Vous n'avez pas compris, il faut entrer votre prénom. Aller on recomence.");
+                SelectName(player);
+            }
+            else
+            {
+                Console.WriteLine("C'est bon, je me souviens, je suis " + playerName + ".");
+                player.Name = playerName;
+                Console.ReadKey();
+                WeaponSelection(player);
+            }
         }
 
         public void WeaponSelection(Player player)

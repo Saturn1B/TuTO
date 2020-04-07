@@ -58,7 +58,7 @@ namespace juli1_tu_pue_la_merde
             }
             else
             {
-                Console.WriteLine("Tu n'a pas réussis a attraper ton arme ");
+                Console.WriteLine("Tu n'a pas réussis a attraper ton arme ...");
                 WeaponSelection(player);
             }
             Console.ReadLine();
@@ -103,9 +103,11 @@ namespace juli1_tu_pue_la_merde
             choix = Convert.ToInt32(Console.ReadLine());
             if (choix == 1)
             {
-                Console.WriteLine("Le montre essaye de se débattre, mais vos coups lui sont fatal.");
+                Enemy troll = new Enemy("Troll", 3, 2, 1);
+                player.Attack(troll);
+                Console.WriteLine("Bravo vouas avez tué le monstre.");
                 Console.ReadLine();
-                Console.WriteLine("En faisant des galipettes, vous vous êtes retouné un ongle..");
+                Console.WriteLine("Mais en faisant des galipettes, vous vous êtes retouné un ongle..");
                 Console.ReadLine();
                 Console.WriteLine("Ça mérite quand même un coeur en moins...");
                 player.LooseLife(1);

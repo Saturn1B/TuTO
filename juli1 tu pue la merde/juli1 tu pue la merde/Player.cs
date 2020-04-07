@@ -27,13 +27,18 @@ namespace juli1_tu_pue_la_merde
         {
             enemy.life -= weaponInHand.damage * strengh;
             Console.WriteLine(enemy.Name + " a perdu " + weaponInHand.damage * strengh + " vie");
+            Console.ReadLine();
             Console.WriteLine(enemy.Name + " a " + enemy.life + " de vie");
+            Console.ReadLine();
             if (enemy.life <= 0)
             {
                 Console.WriteLine(enemy.Name + " est mort ");
+                Console.ReadLine();
                 Console.WriteLine(Name + " gagne " + enemy.xpToGive + " xp");
+                Console.ReadLine();
                 xp += enemy.xpToGive;
                 Console.WriteLine(Name + " a " + xp + " xp");
+                Console.ReadLine();
             }
             else if(enemy.life > 0)
             {

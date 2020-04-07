@@ -27,25 +27,25 @@ namespace juli1_tu_pue_la_merde
         {
             enemy.life -= weaponInHand.damage * strengh;
             Console.WriteLine(enemy.Name + " a perdu " + weaponInHand.damage * strengh + " vie.");
-            Console.ReadLine();
+            Console.ReadKey();
             if (enemy.life <= 0)
             {
                 Console.WriteLine(enemy.Name + " est mort. ");
-                Console.ReadLine();
+                Console.ReadKey();
                 Console.WriteLine(Name + " gagne " + enemy.xpToGive + " xp.");
-                Console.ReadLine();
+                Console.ReadKey();
                 xp += enemy.xpToGive;
                 Console.WriteLine(Name + " a " + xp + " xp.");
-                Console.ReadLine();
+                Console.ReadKey();
                 Console.WriteLine("Bravo vous avez tué " + enemy.Name + "!");
-                Console.ReadLine();
+                Console.ReadKey();
             }
             else if(enemy.life > 0)
             {
                 Console.WriteLine(enemy.Name + " a " + enemy.life + " de vie.");
-                Console.ReadLine();
+                Console.ReadKey();
                 Console.WriteLine(enemy.Name + " attaqua a son tour.");
-                Console.ReadLine();
+                Console.ReadKey();
                 enemy.Attack(this);
             }
         }
@@ -63,7 +63,7 @@ namespace juli1_tu_pue_la_merde
         public void Dead()
         {
             Console.WriteLine("Vous êtes mort.");
-            Console.ReadLine();
+            Console.ReadKey();
             Console.WriteLine("Relancer le jeu.");
             System.Environment.Exit(0);
         }

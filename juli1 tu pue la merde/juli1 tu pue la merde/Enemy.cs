@@ -25,20 +25,20 @@ namespace juli1_tu_pue_la_merde
         {
             player.life -= strengh;
             Console.WriteLine(player.Name + " a perdu " + strengh + " vie.");
-            Console.ReadLine();
+            Console.ReadKey();
             Console.WriteLine(player.Name + " a " + player.life + " de vie.");
-            Console.ReadLine();
+            Console.ReadKey();
             if (player.life <= 0)
             {
                 Console.WriteLine(player.Name + " n'a plus de vie. ");
-                Console.ReadLine();
+                Console.ReadKey();
                 Console.WriteLine("Vous êtes mort.");
-                Console.ReadLine();
+                Console.ReadKey();
             }
             else if (player.life > 0)
             {
                 Console.WriteLine("A vous d'attaquer.");
-                Console.ReadLine();
+                Console.ReadKey();
                 player.Attack(this);
             }
         }
